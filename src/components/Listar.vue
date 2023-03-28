@@ -8,6 +8,7 @@
                 <RouterLink to="/login"><el-button v-if="(!is_logged)" type="success">LOGIN</el-button></RouterLink>
                 <el-button v-if="is_logged" v-on:click="salir()" type="warning">LOG OUT</el-button>
             </div>
+            
             <div>
                 <el-breadcrumb separator="-">
                     <el-breadcrumb-item :to="{ path: './' }">
@@ -23,32 +24,7 @@
                     <div>
                         <el-table :data="nombres" style="width: 100%">
 
-                            <!-- <el-table-column prop="lastname" label="Apellido" />
-                            <el-table-column prop="name" label="Nombre" />
-                            <el-table-column prop="dni" label="Dni" />
-                            <el-table-column prop="fnac" label="Fecha de Nacimiento" />
-                            <el-table-column prop="adress" label="Direccion" />
-                            <el-table-column prop="provincia" label="Provincia" />
-
-
-                            <el-table-column v-if="is_logged">
-                                <template #default="scope">
-                                    <el-button type="warning" v-on:click="esEditar(scope.row.id)">Editar</el-button>
-
-                                </template>
-                            </el-table-column>
-
-
-                            <el-table-column v-if="is_logged">
-                                <template #default="scope">
-                                    <el-button v-on:click="borrarUsuario(scope.row.id)"
-                                        type="danger">Eliminar</el-button>
-                                </template>
-                            </el-table-column>
-
-
-
- -->
+                   
 
                             <el-table-column prop="lastname" label="Apellido" />
                             <el-table-column prop="name" label="Nombre" />
@@ -94,19 +70,6 @@ import axios from 'axios';
 import { computed, ref } from 'vue';
 
 
-
-/* Testing*/
-/* const search = ref('');
-const dataTable = data(); */
-
-/* const filterDataTable = computed(() =>
-    dataTable.filter((nombres.provincia),
-!search.value ||
-    nombres.provincia.toLowerCase().includes(search.value.toLowerCase())
-  )
-); */
-
-
 export default {
 
 
@@ -125,13 +88,6 @@ export default {
                     !search.value ||
                     datos.toLowerCase().includes(search.value.toLowerCase())
                 ))
-/* const filterTableData = computed(() =>
-  tableData.filter(
-    (data) =>
-      !search.value ||
-      data.name.toLowerCase().includes(search.value.toLowerCase())
-  )
-) */
 
 
 
